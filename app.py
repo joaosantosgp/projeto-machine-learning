@@ -13,8 +13,10 @@ modelo.fit(x, y)
 st.title("Adivinhando o valor de uma pizza")
 st.divider()
 
-diametro = st.number_input("Digite o tamanho do diametro da pizza: ")
+diametro = st.number_input("Digite o tamanho do diametro da pizza em (cm): ")
+botao = st.button('Verificar')
 
-if diametro:
+if botao:
+ if diametro:
     preco_previsto = modelo.predict([[diametro]])[0][0]
     st.write(f"O valor da pizza com o diametro {diametro:.2f}cm e de R$ {preco_previsto:.2f}")
